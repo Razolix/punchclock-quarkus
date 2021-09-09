@@ -1,7 +1,7 @@
 <ul class="list-group">
   <li class="list-group-item list-group-item-dark">Mitarbeiter</li>
   <li *ngFor="let employee of employees" class="list-group-item d-flex justify-content-between align-items-center">
-    <button type="button" class="list-group-item list-group-item-action">{{employee.firstName}} {{employee.lastName}}</button>
+    <button (click)="showEmployee(employee.id)" type="button" class="list-group-item list-group-item-action">{{employee.firstName}} {{employee.lastName}}</button>
     <button (click)="updateEmployee(employee.id)" type="button" class="btn btn-warning">Bearbeiten</button>
     <button (click)="removeEmployee(employee.id)" type="button" class="btn btn-danger">x</button>
   </li>
