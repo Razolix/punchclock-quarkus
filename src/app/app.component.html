@@ -1,40 +1,63 @@
-<body class="bk-color">
-<form id="createEntryForm" [formGroup]="entryForm" (ngSubmit)="addEntry()">
-  <label for="checkIn">Check in</label>
-  <input formControlName="checkIn" type="datetime-local" name="checkInDate" id="checkIn" required>
-  <label for="checkOut">Check out</label>
-  <input formControlName="checkOut" type="datetime-local" name="checkOutDate" id="checkOut" required>
-  <input type="submit" value="Save"/>
-</form>
+<body>
+<app-project></app-project>
+<app-employee></app-employee>
 
-<form [formGroup]="updateEntryForm" (ngSubmit)="updateEntry()">
-  <label for="checkIn">id</label>
-  <input formControlName="id" type="number" name="checkInDate" required>
-  <label for="checkIn">Check in</label>
-  <input formControlName="checkIn" type="datetime-local" name="checkInDate" required>
-  <label for="checkOut">Check out</label>
-  <input formControlName="checkOut" type="datetime-local" name="checkOutDate" required>
-  <input type="submit" value="Update"/>
-</form>
+<!--<form id="createEntryForm" [formGroup]="entryForm" (ngSubmit)="addEntry()">-->
+<!--  <label for="checkIn">Check in</label>-->
+<!--  <input formControlName="checkIn" type="datetime-local" name="checkInDate" id="checkIn" required>-->
+<!--  <label for="checkOut">Check out</label>-->
+<!--  <input formControlName="checkOut" type="datetime-local" name="checkOutDate" id="checkOut" required>-->
+<!--  <input type="submit" value="Save"/>-->
+<!--</form>-->
 
-<table>
-  <thead>
-  <tr>
-    <th>Id</th>
-    <th>Check in</th>
-    <th>Check out</th>
-    <th>Remove</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let entry of entries">
-    <td>{{entry.id}}</td>
-    <td>{{entry.checkIn}}</td>
-    <td>{{entry.checkOut}}</td>
-    <td>
-      <button (click)="removeEntry(entry.id)">x</button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<!--<form [formGroup]="updateEntryForm" (ngSubmit)="updateEntry()">-->
+<!--  <label for="checkIn">id</label>-->
+<!--  <input formControlName="id" type="number" name="checkInDate" required>-->
+<!--  <label for="checkIn">Check in</label>-->
+<!--  <input formControlName="checkIn" type="datetime-local" name="checkInDate" required>-->
+<!--  <label for="checkOut">Check out</label>-->
+<!--  <input formControlName="checkOut" type="datetime-local" name="checkOutDate" required>-->
+<!--  <input type="submit" value="Update"/>-->
+<!--</form>-->
+
+<!--<table>-->
+<!--  <thead>-->
+<!--  <tr>-->
+<!--    <th>Id</th>-->
+<!--    <th>Check in</th>-->
+<!--    <th>Check out</th>-->
+<!--    <th>Remove</th>-->
+<!--  </tr>-->
+<!--  </thead>-->
+<!--  <tbody>-->
+<!--  <tr *ngFor="let entry of entries">-->
+<!--    <td>{{entry.id}}</td>-->
+<!--    <td>{{entry.checkIn}}</td>-->
+<!--    <td>{{entry.checkOut}}</td>-->
+<!--    <td>-->
+<!--      <button (click)="removeEntry(entry.id)">x</button>-->
+<!--    </td>-->
+<!--  </tr>-->
+<!--  </tbody>-->
+<!--</table>-->
+
+
+
+
+
+
+<!--<ul *ngFor="let project of projects" class="list-group">-->
+<!--  <li class="list-group-item d-flex justify-content-between align-items-center">-->
+<!--    {{project.id}}-->
+<!--    <span class="badge badge-primary badge-pill">14</span>-->
+<!--  </li>-->
+<!--  <li class="list-group-item d-flex justify-content-between align-items-center">-->
+<!--    Dapibus ac facilisis in-->
+<!--    <span class="badge badge-primary badge-pill">2</span>-->
+<!--  </li>-->
+<!--  <li class="list-group-item d-flex justify-content-between align-items-center">-->
+<!--    Morbi leo risus-->
+<!--    <span class="badge badge-primary badge-pill">1</span>-->
+<!--  </li>-->
+<!--</ul>-->
 </body>

@@ -9,34 +9,5 @@ import {FormBuilder} from "@angular/forms";
 })
 
 export class AppComponent {
-  entries: Entry[] = [];
 
-  entryForm = this.formBuilder.group({
-    checkIn: '',
-    checkOut: ''
-  })
-
-  updateEntryForm = this.formBuilder.group({
-    id: '',
-    checkIn: '',
-    checkOut: ''
-  })
-
-  constructor(private entryService: EntryService, private formBuilder: FormBuilder) {
-    entryService.entrySubject$.subscribe(value => {
-      this.entries = value;
-    })
-  }
-
-  addEntry() {
-    this.entryService.addEntry(this.entryForm.value);
-  }
-
-  removeEntry(entryId: number)  {
-    this.entryService.removeEntry(entryId);
-  }
-
-  updateEntry() {
-    this.entryService.updateEntry(this.updateEntryForm.value);
-  }
 }
