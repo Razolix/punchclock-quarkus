@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
-import {Project} from "./project.service";
 
 export interface Employee {
   id: number;
@@ -9,7 +8,6 @@ export interface Employee {
   firstName: string;
   userName: string;
   password: string;
-  projects: Project[];
 }
 
 @Injectable({
@@ -31,6 +29,10 @@ export class EmployeeService {
 
   addEmployee(employee: Employee) {
     this.http.post(this.url, employee).subscribe(() => this.loadEmployees());
+  }
+
+  getEmployee(id: number) {
+    return this.http.get<Employee>(this.url + '/' + id);
   }
 
   removeEmployee(id: number) {

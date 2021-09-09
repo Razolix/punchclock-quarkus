@@ -14,7 +14,7 @@ export interface Ticket {
   providedIn: 'root'
 })
 export class TicketService {
-  url = 'http://localhost:8080/ticketes';
+  url = 'http://localhost:8080/tickets';
   ticketSubject$ = new BehaviorSubject<Ticket[]>([]);
 
   constructor(private http: HttpClient) {

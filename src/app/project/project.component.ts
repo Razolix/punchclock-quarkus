@@ -8,7 +8,7 @@ import {Project, ProjectService} from "../../project.service";
   styleUrls: ['./project.component.css']
 })
 export class ProjectComponent {
-  entries: Project[] = [];
+  projects: Project[] = [];
 
   projectForm = this.formBuilder.group({
     checkIn: '',
@@ -23,7 +23,7 @@ export class ProjectComponent {
 
   constructor(private projectService: ProjectService, private formBuilder: FormBuilder) {
     projectService.projectSubject$.subscribe(value => {
-      this.entries = value;
+      this.projects = value;
     })
   }
 

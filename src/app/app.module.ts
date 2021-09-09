@@ -8,16 +8,24 @@ import {EntryService} from "../entry.service";
 import {HttpClientModule} from "@angular/common/http";
 import {ProjectComponent} from './project/project.component';
 import {TicketComponent} from './ticket/ticket.component';
-import {EmployeeComponent} from './employee/employee.component';
+import {EmployeeListComponent} from './employee/employeeList/employeeList.component';
 import {EntryComponent} from './entry/entry.component';
+import { MainviewComponent } from './mainview/mainview.component';
+import { CreateEmployeeComponent } from './employee/create-employee/create-employee.component';
+import { EditEmployeeComponent } from './employee/edit-employee/edit-employee.component';
+import { ShowEmployeeComponent } from './employee/show-employee/show-employee.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProjectComponent,
     TicketComponent,
-    EmployeeComponent,
-    EntryComponent
+    EmployeeListComponent,
+    EntryComponent,
+    MainviewComponent,
+    CreateEmployeeComponent,
+    EditEmployeeComponent,
+    ShowEmployeeComponent
   ],
     imports: [
         BrowserModule,

@@ -1,1 +1,9 @@
-<p>project works!</p>
+<ul class="list-group">
+  <li class="list-group-item list-group-item-dark">Projekte</li>
+  <li *ngFor="let project of projects" class="list-group-item d-flex justify-content-between align-items-center">
+    <button type="button" class="list-group-item list-group-item-action">{{project.name}}</button>
+    <button (click)="removeProject(project.id)" type="button" class="btn btn-danger">x</button>
+  </li>
+</ul>
+<button type="button" class="btn btn-success">Neues Projekt</button>
+<button type="button" class="btn btn-warning">Bearbeiten</button>
