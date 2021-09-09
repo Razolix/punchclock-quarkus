@@ -43,4 +43,15 @@ public class EmployeeService {
     public void updateEmployee(Employee employee) {
         entityManager.merge(employee);
     }
+
+    @Transactional
+    public Employee getUserByEmailPassword(String username, String password){
+
+        var query = entityManager.createQuery("FROM Employee WHERE username = :username AND password = :password");
+        query.setParameter("username", username);
+        query.setParameter("password", password);
+
+        return (Employee) query.getSingleResult();
+
+    }
 }

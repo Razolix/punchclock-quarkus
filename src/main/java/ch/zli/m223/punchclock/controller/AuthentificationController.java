@@ -4,6 +4,7 @@ import java.time.Duration;
 import java.util.Arrays;
 import java.util.HashSet;
 
+import javax.inject.Inject;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.NotAuthorizedException;
 import javax.ws.rs.POST;
@@ -11,6 +12,8 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import ch.zli.m223.punchclock.domain.Employee;
+import ch.zli.m223.punchclock.service.EmployeeService;
 import org.eclipse.microprofile.jwt.Claims;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 
@@ -25,23 +28,34 @@ import io.smallrye.jwt.build.Jwt;
 @Tag(name = "Authorization", description = "Sample to manage Authorization")
 @Path("/auth")
 public class AuthentificationController {
-    
+
+    @Inject
+    EmployeeService employeeService;
+
     @POST
     @Path("/login")
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
     public LoginResultViewModel login(LoginViewModel loginViewModel){
-        if(loginViewModel.getUsername().equals("user") && loginViewModel.getPassword().equals("secure")){
+        Employee employee = employeeService.getUserByEmailPassword(loginViewModel.getUsername(), loginViewModel.getPassword());
+        if(loginViewModel.getUsername().equals(employee.getUserName()) && loginViewModel.getPassword().equals(employee.getPassword())){
             String token =
             Jwt.issuer("https://zli.ch/issuer") 
               .upn("user@zli.ch") 
-              .groups(new HashSet<>(Arrays.asList("User", "Admin"))) 
+              .groups(new HashSet<>(Arrays.asList("Admin")))
               .claim(Claims.birthdate.name(), "2001-07-13")
               .expiresIn(Duration.ofHours(1)) 
             .sign();
             return new LoginResultViewModel(token);
         }
         throw new NotAuthorizedException("User ["+loginViewModel.getUsername()+"] not known");
+    }
+
+    @POST
+    @Path("/signUp")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public void signUp(Employee employee){
+        employeeService.createEmployee(employee);
     }
 }
 

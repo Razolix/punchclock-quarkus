@@ -2,6 +2,7 @@ package ch.zli.m223.punchclock.controller;
 
 import java.util.List;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -14,6 +15,7 @@ import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
 @Path("/entries")
 @Tag(name = "Entries", description = "Handling of entries")
+//@RolesAllowed({ "Admin" })
 public class EntryController {
 
     @Inject

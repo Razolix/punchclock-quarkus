@@ -16,6 +16,9 @@ public class Project {
     private String description;
 
     @OneToMany
+    private List<Employee> employees;
+
+    @OneToMany
     private List<Ticket> tickets;
 
     public Long getId() {
@@ -48,5 +51,13 @@ public class Project {
 
     public void setTickets(List<Ticket> tickets) {
         this.tickets = tickets;
+    }
+
+    public List<Employee> getEmployees() {
+        return employees;
+    }
+
+    public void setEmployees(List<Employee> employees) {
+        this.employees = employees;
     }
 }

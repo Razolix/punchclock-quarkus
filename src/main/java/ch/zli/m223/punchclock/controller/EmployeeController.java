@@ -12,6 +12,7 @@ import java.util.List;
 
 @Path("/employees")
 @Tag(name = "Employees", description = "Handling of employees")
+//@RolesAllowed({"Admin"})
 public class EmployeeController {
 
     @Inject
@@ -44,6 +45,7 @@ public class EmployeeController {
     }
 
     @PUT
+    @Consumes(MediaType.APPLICATION_JSON)
     public void update(Employee employee) {
         employeeService.updateEmployee(employee);
     }
