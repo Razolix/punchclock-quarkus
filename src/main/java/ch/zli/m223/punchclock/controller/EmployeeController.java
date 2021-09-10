@@ -72,7 +72,10 @@ public class EmployeeController {
         employeeService.updateEmployee(employee);
     }
 
-    public void getEmployeesUsernameWithWhiteSpace() {
-        employeeService.getEmployeesUsernameWithWhiteSpace();
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/usernames")
+    public List<Employee> getEmployeesUsernameWithWhiteSpace() {
+        return employeeService.getEmployeesUsernameWithWhiteSpace();
     }
 }

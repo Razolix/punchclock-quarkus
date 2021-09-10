@@ -1,5 +1,8 @@
 # M223 Punchclock
 
+Im Backend sind alle Möglichkeiten erstellt worden. Alle vier Entites können hinzugefügt, entfernt, bearbeitet und geholt werden. Jedoch wurden nur zwei davon Implementiert. Weiter unten finden Sie dazu mehr.
+
+
 Folgende Schritte sind notwendig um die Applikation zu erstellen und zu starten: 
 1. Stellen Sie sicher, dass OpenJDK 11 oder höher installiert und JAVA_HOME korrekt gesetzt ist.  
 2. Installieren Sie (falls noch nicht vorhanden) Apache Maven 3.8.1 oder höher
@@ -17,9 +20,6 @@ Nicht verwendete Schnittstellen:
 
 REST-Schnittstelle der Applikation: 
 http://localhost:8080/auth/...
-
-REST-Schnittstelle der Applikation: 
-http://localhost:8080/secured/...
 
 REST-Schnittstelle der Applikation:
 http://localhost:8080/entries/...

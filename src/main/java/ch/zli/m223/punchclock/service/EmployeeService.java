@@ -59,9 +59,8 @@ public class EmployeeService {
     public List<Employee> getEmployeesUsernameWithWhiteSpace(){
 
         var query = entityManager.createQuery(
-                "FROM Employee GROUP BY username HAVING COUNT(id) > 10");
+                "FROM Employee employee GROUP BY employee.id HAVING (employee.id) < 5");
 
         return query.getResultList();
-
     }
 }
