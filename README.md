@@ -1,4 +1,4 @@
-# FrontendPunchclock
+## FrontendPunchclock
 
 Das Projekt wurde mit  [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4 generiert.
 

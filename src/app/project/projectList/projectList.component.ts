@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {FormBuilder} from "@angular/forms";
 import {Project, ProjectService} from "../../../project.service";
 import {Router} from "@angular/router";
 
@@ -8,7 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './projectList.component.html',
   styleUrls: ['./projectList.component.css']
 })
-export class ProjectListComponent implements OnInit{
+export class ProjectListComponent implements OnInit {
   projects: Project[] = [];
 
   constructor(private router: Router, private projectService: ProjectService) {

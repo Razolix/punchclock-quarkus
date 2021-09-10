@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Employee, EmployeeService, Query} from "../../../employee.service";
+import {Employee, EmployeeService} from "../../../employee.service";
 import {Router} from "@angular/router";
 
 @Component({
@@ -7,7 +7,7 @@ import {Router} from "@angular/router";
   templateUrl: './employeeList.component.html',
   styleUrls: ['./employeeList.component.css']
 })
-export class EmployeeListComponent implements OnInit{
+export class EmployeeListComponent implements OnInit {
   employees: Employee[] = [];
   queryList: Employee[] = [];
 
@@ -40,6 +40,6 @@ export class EmployeeListComponent implements OnInit{
   }
 
   getQuery() {
-    this.employeeService.getQuery().subscribe(result =>  this.queryList = result);
-    }
+    this.employeeService.getQuery().subscribe(result => this.queryList = result);
+  }
 }
