@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.service.TicketService;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -17,7 +18,7 @@ import java.util.List;
 
 @Path("/tickets")
 @Tag(name = "Tickets", description = "Handling of tickets")
-//@RolesAllowed({ "Admin" })
+@RolesAllowed({ "Admin" })
 public class TicketController {
 
     /**

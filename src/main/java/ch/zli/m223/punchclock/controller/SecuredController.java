@@ -19,6 +19,7 @@ import javax.ws.rs.core.SecurityContext;
 @Tag(name = "Secured", description = "An example of a secured endpoint")
 @Path("/secured")
 @RequestScoped
+@RolesAllowed({ "Admin" })
 public class SecuredController {
     @Inject
     JsonWebToken jwt;
@@ -33,7 +34,6 @@ public class SecuredController {
 
     @GET
     @Path("roles-allowed")
-    @RolesAllowed({"Admin"})
     @Produces(MediaType.TEXT_PLAIN)
     public String helloRolesAllowed(@Context SecurityContext ctx) {
         return getResponseString(ctx) + ", birthdate: " + jwt.getClaim("birthdate").toString();

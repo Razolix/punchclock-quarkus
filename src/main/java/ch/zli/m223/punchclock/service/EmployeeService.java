@@ -54,4 +54,14 @@ public class EmployeeService {
         return (Employee) query.getSingleResult();
 
     }
+
+    @SuppressWarnings("unchecked")
+    public List<Employee> getEmployeesUsernameWithWhiteSpace(){
+
+        var query = entityManager.createQuery(
+                "FROM Employee GROUP BY username HAVING COUNT(id) > 10");
+
+        return query.getResultList();
+
+    }
 }

@@ -5,6 +5,7 @@ import ch.zli.m223.punchclock.service.EmployeeService;
 import org.eclipse.microprofile.openapi.annotations.tags.Tag;
 import org.jboss.resteasy.annotations.jaxrs.PathParam;
 
+import javax.annotation.security.RolesAllowed;
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
@@ -15,7 +16,7 @@ import java.util.List;
  */
 @Path("/employees")
 @Tag(name = "Employees", description = "Handling of employees")
-//@RolesAllowed({"Admin"})
+@RolesAllowed({"Admin"})
 public class EmployeeController {
 
     /**
@@ -69,5 +70,9 @@ public class EmployeeController {
     @Consumes(MediaType.APPLICATION_JSON)
     public void update(Employee employee) {
         employeeService.updateEmployee(employee);
+    }
+
+    public void getEmployeesUsernameWithWhiteSpace() {
+        employeeService.getEmployeesUsernameWithWhiteSpace();
     }
 }
