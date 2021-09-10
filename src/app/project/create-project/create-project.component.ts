@@ -18,7 +18,7 @@ export class CreateProjectComponent {
   constructor(private router: Router, private projectService: ProjectService, private formBuilder: FormBuilder) { }
 
   addProject() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/mainView']);
     this.projectService.addProject(this.projectForm.value);
   }
 }

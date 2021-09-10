@@ -11,6 +11,7 @@ import {Project, ProjectService} from "../../../project.service";
 export class EditProjectComponent implements OnInit {
   id: number = 0;
   projectForm = this.formBuilder.group({
+    id: '',
     name: '',
     description: ''
   })
@@ -26,12 +27,13 @@ export class EditProjectComponent implements OnInit {
   }
 
   setProject(project: Project) {
+    this.projectForm.controls['id'].setValue(this.id);
     this.projectForm.controls['name'].setValue(project.name);
     this.projectForm.controls['description'].setValue(project.description);
   }
 
   updateProject() {
     this.projectService.updateProject(this.projectForm.value);
-    this.router.navigate(['/']);
+    this.router.navigate(['/mainView']);
   }
 }

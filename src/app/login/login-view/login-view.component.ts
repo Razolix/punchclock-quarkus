@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import {Component} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {Router} from "@angular/router";
+import {EmployeeService, JWT} from "../../../employee.service";
 
 @Component({
   selector: 'app-login-view',
@@ -12,9 +14,12 @@ export class LoginViewComponent {
     password: ''
   })
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder) {
+  }
 
-  login() {
-
+  async login() {
+    const token = await this.employeeService.getEmployeeLogin(this.loginForm.value);
+    localStorage.setItem('jwt', (token as JWT).token);
+    this.router.navigate(['/mainView']);
   }
 }

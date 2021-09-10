@@ -12,8 +12,8 @@ import {LoginViewComponent} from "./login/login-view/login-view.component";
 import {RegisterViewComponent} from "./login/register-view/register-view.component";
 
 const routes: Routes = [
-  {path: '', component: MainviewComponent},
-  {path: 'loginView', component: ViewComponent},
+  {path: 'mainView', component: MainviewComponent},
+  {path: '', component: ViewComponent},
   {path: 'login', component: LoginViewComponent},
   {path: 'register', component: RegisterViewComponent},
   {path: 'newEmployee', component: CreateEmployeeComponent},

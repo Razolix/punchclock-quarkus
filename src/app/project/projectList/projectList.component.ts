@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {Project, ProjectService} from "../../../project.service";
 import {Router} from "@angular/router";
@@ -8,7 +8,7 @@ import {Router} from "@angular/router";
   templateUrl: './projectList.component.html',
   styleUrls: ['./projectList.component.css']
 })
-export class ProjectListComponent {
+export class ProjectListComponent implements OnInit{
   projects: Project[] = [];
 
   constructor(private router: Router, private projectService: ProjectService) {
@@ -22,10 +22,16 @@ export class ProjectListComponent {
   }
 
   updateProject(id: number) {
-    this.router.navigate(['/updateProject', id]);
+    this.router.navigate(['../updateProject', id]);
   }
 
   showProject(id: number) {
-    this.router.navigate(['/showProject', id]);
+    this.router.navigate(['../showProject', id]);
+  }
+
+  ngOnInit(): void {
+    this.projectService.projectSubject$.subscribe(value => {
+      this.projects = value;
+    })
   }
 }

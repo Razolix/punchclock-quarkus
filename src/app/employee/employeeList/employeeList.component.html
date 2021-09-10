@@ -6,4 +6,11 @@
     <button (click)="removeEmployee(employee.id)" type="button" class="btn btn-danger">x</button>
   </li>
 </ul>
-<a routerLink="newEmployee"><button type="button" class="btn btn-success">Neuer Mitarbeiter</button></a>
+<a routerLink="/newEmployee"><button type="button" class="btn btn-success">Neuer Mitarbeiter</button></a>
+
+<ul class="list-group">
+  <li class="list-group-item list-group-item-dark">Query: Benutzer unter Id 5</li>
+  <li *ngFor="let query of queryList" class="list-group-item d-flex justify-content-between align-items-center">
+    {{query.firstName}} {{query.lastName}}
+  </li>
+</ul>

@@ -1,27 +1,21 @@
 # FrontendPunchclock
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4.
+Das Projekt wurde mit  [Angular CLI](https://github.com/angular/angular-cli) version 12.2.4 generiert.
 
-## Development server
+Das Projekt ist eine kleine Applikation, bei der man Employees sowie Projekte erstellen kann, die eine Beschreibung besitzen.
+In den Projekten sind eigentlich noch Tickets sowie Entries aber diese konnten aus zeitlichen Gründen nicht implementiert werden.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Alle Employees die in der Applikation erstellt werden, können beim Einloggen benutzt werden.
+Projekte und Employees können angeklickt werden um ihre Informationen zu sehen. Auch gibt es ein Entfernen- sowie Bearbeitenknopf.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Projekt starten
+Um das Projekt zu starten müssen Sie den Befehl unten eingeben.
+- ng Serve
 
+Danach können Sie auf `http://localhost:4200/` gehen und sich Registeriern.
+
+Evenetuell müssen Sie noch `npm install` in der Konsole eingeben um das Frontend laufen zu lassen.
 ## Build
 
 Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

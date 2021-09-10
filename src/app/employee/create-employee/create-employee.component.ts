@@ -19,7 +19,7 @@ export class CreateEmployeeComponent {
   constructor(private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
 
   addEmployee() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/mainView']);
     this.employeeService.addEmployee(this.employeeForm.value);
   }
 }
