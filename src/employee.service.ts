@@ -42,6 +42,7 @@ export class EmployeeService implements OnInit {
   }
 
   addEmployee(employee: Employee) {
+    this.getQuery();
     const jwt = localStorage.getItem('jwt');
     this.http.post(this.url, employee,{
       headers: {'Authorization':'Bearer ' + jwt}}).subscribe(() => this.loadEmployees());

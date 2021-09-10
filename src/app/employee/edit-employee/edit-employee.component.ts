@@ -40,5 +40,6 @@ export class EditEmployeeComponent implements OnInit {
   updateEmployee() {
     this.employeeService.updateEmployee(this.employeeForm.value);
     this.router.navigate(['/mainView']);
+    this.employeeService.getQuery();
   }
 }
