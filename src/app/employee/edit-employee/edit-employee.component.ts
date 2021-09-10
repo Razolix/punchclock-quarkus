@@ -1,9 +1,7 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from "@angular/router";
 import {Employee, EmployeeService} from "../../../employee.service";
 import {FormBuilder} from "@angular/forms";
-import {Observable, Subscription} from "rxjs";
-import {AssertNotNull} from "@angular/compiler";
 
 @Component({
   selector: 'app-edit-employee',
@@ -19,7 +17,9 @@ export class EditEmployeeComponent implements OnInit {
     userName: '',
     password: ''
   })
-  constructor(private route: ActivatedRoute, private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder) { }
+
+  constructor(private route: ActivatedRoute, private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder) {
+  }
 
   ngOnInit() {
     this.route.paramMap.subscribe(params => {

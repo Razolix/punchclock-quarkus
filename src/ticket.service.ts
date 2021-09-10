@@ -4,7 +4,7 @@ import {HttpClient} from "@angular/common/http";
 import {Entry} from "./entry.service";
 
 export interface Ticket {
-  id: number;
+  id?: number;
   name: String;
   description: String;
   entries: Entry[];
@@ -29,6 +29,10 @@ export class TicketService {
 
   addTicket(ticket: Ticket) {
     this.http.post(this.url, ticket).subscribe(() => this.loadTickets());
+  }
+
+  getTicket(id: number) {
+    return this.http.get<Ticket>(this.url + '/' + id);
   }
 
   removeTicket(id: number) {

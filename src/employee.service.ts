@@ -3,7 +3,7 @@ import {BehaviorSubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 
 export interface Employee {
-  id?: number;
+  id: number;
   lastName: string;
   firstName: string;
   userName: string;

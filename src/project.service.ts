@@ -31,6 +31,10 @@ export class ProjectService {
     this.http.post(this.url, project).subscribe(() => this.loadProjects());
   }
 
+  getProject(id: number) {
+    return this.http.get<Project>(this.url + '/' + id);
+  }
+
   removeProject(id: number) {
     this.http.delete(this.url + '/' + id).subscribe(() => this.loadProjects());
   }

@@ -2,7 +2,6 @@ import {BehaviorSubject} from "rxjs";
 import {HttpClient} from "@angular/common/http";
 import {Injectable} from "@angular/core";
 
-
 export interface Entry {
   id: number;
   checkIn: Date;
@@ -26,6 +25,10 @@ export class EntryService {
 
   addEntry(entry: Entry) {
     this.http.post(this.url, entry).subscribe(() => this.loadEntries());
+  }
+
+  getEntry(id: number) {
+    return this.http.get<Entry>(this.url + '/' + id);
   }
 
   removeEntry(id: number) {
