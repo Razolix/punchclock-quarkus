@@ -10,20 +10,32 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
+/**
+ * Employee entity
+ */
 @Path("/employees")
 @Tag(name = "Employees", description = "Handling of employees")
 //@RolesAllowed({"Admin"})
 public class EmployeeController {
 
+    /**
+     * EmployeeService Injection
+     */
     @Inject
     EmployeeService employeeService;
 
+    /**
+     * Employees anzeigen
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     public List<Employee> list() {
         return employeeService.findAll();
     }
 
+    /**
+     * Employee hinzufügen
+     */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
@@ -31,12 +43,18 @@ public class EmployeeController {
         return employeeService.createEmployee(employee);
     }
 
+    /**
+     * Employee entfernen
+     */
     @DELETE
     @Path("/{id}")
     public void remove(@PathParam Long id) {
         employeeService.removeEmployee(id);
     }
 
+    /**
+     * Gewünschten Employee hinzufügen
+     */
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{id}")
@@ -44,6 +62,9 @@ public class EmployeeController {
         return employeeService.getEmployee(id);
     }
 
+    /**
+     * Employee update
+     */
     @PUT
     @Consumes(MediaType.APPLICATION_JSON)
     public void update(Employee employee) {

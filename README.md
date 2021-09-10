@@ -11,7 +11,26 @@ Folgende Schritte sind notwendig um die Applikation zu erstellen und zu starten:
 ```
 
 Folgende Dienste stehen während der Ausführung im Profil dev zur Verfügung:
+Nicht verwendete Schnittstellen:
+- Ticket
+- Entry
 
-REST-Schnittstelle der Applikation: http://localhost:8080/entries/
+REST-Schnittstelle der Applikation: 
+http://localhost:8080/auth/...
+
+REST-Schnittstelle der Applikation: 
+http://localhost:8080/secured/...
+
+REST-Schnittstelle der Applikation:
+http://localhost:8080/entries/...
+
+REST-Schnittstelle der Applikation:
+http://localhost:8080/projects/...
+
+REST-Schnittstelle der Applikation:
+http://localhost:8080/employees/...
+
+REST-Schnittstelle der Applikation:
+http://localhost:8080/tickets/...
 
 Swagger API: http://localhost:8080/q/swagger-ui/
