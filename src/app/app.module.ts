@@ -47,6 +47,7 @@ import {TicketService} from "../ticket.service";
   providers: [
     EntryService,
     TicketService,
+    LoginViewComponent,
     ProjectService,
     EmployeeService],
   bootstrap: [AppComponent]

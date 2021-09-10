@@ -9,6 +9,9 @@ Alle Employees die in der Applikation erstellt werden, können beim Einloggen be
 Projekte und Employees können angeklickt werden um ihre Informationen zu sehen. Auch gibt es ein Entfernen- sowie Bearbeitenknopf.
 
 
+Unter diesem Link finden Sie das Repository.
+
+https://github.com/Razolix/punchclock-quarkus
 ## Projekt starten
 Um das Projekt zu starten müssen Sie den Befehl unten eingeben.
 - ng Serve

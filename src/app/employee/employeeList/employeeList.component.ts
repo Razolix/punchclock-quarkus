@@ -14,7 +14,6 @@ export class EmployeeListComponent implements OnInit {
   constructor(private router: Router, private employeeService: EmployeeService) {
     employeeService.employeeSubject$.subscribe(value => {
       this.employees = value;
-      this.getQuery();
     })
   }
 
@@ -36,6 +35,7 @@ export class EmployeeListComponent implements OnInit {
     this.employeeService.employeeSubject$.subscribe(value => {
       this.employees = value;
     })
+    this.employeeService.loadEmployees();
     this.getQuery();
   }
 

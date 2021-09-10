@@ -19,10 +19,6 @@ export interface JWT {
   token: string;
 }
 
-export interface Query {
-  username: string;
-}
-
 @Injectable({
   providedIn: 'root'
 })
@@ -39,7 +35,6 @@ export class EmployeeService implements OnInit {
 
   loadEmployees() {
     const jwt = localStorage.getItem('jwt');
-    console.error(jwt);
     this.http.get<Employee[]>(this.url,{
       headers: {'Authorization':'Bearer ' + jwt}}).subscribe(employee => {
       this.employeeSubject$.next(employee as Employee[])
@@ -68,14 +63,6 @@ export class EmployeeService implements OnInit {
     const jwt = localStorage.getItem('jwt');
     this.http.put(this.url, employee,{
       headers: {'Authorization':'Bearer ' + jwt}}).subscribe(() => this.loadEmployees());
-  }
-
-  async getEmployeeLogin(loginViewModel: LoginViewModel) {
-    return await this.http.post('http://localhost:8080/auth/login', loginViewModel).toPromise();
-  }
-
-  async signUp(employee: Employee) {
-    return await this.http.post('http://localhost:8080/auth/signUp', employee).toPromise();
   }
 
   getQuery() {

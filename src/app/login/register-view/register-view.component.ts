@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {FormBuilder} from "@angular/forms";
 import {Router} from "@angular/router";
-import {EmployeeService} from "../../../employee.service";
+import {LoginViewService} from "../../../loginView.service";
 
 @Component({
   selector: 'app-register-view',
@@ -17,9 +17,10 @@ export class RegisterViewComponent {
     password: ''
   })
 
-  constructor(private router: Router, private employeeService: EmployeeService, private formBuilder: FormBuilder) {}
+  constructor(private router: Router, private loginViewService: LoginViewService, private formBuilder: FormBuilder) {
+  }
 
   register() {
-    this.employeeService.signUp(this.registerForm.value).then(() =>  this.router.navigate(['/']));
+    this.loginViewService.signUp(this.registerForm.value).then(() => this.router.navigate(['/']));
   }
 }
