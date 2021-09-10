@@ -21,5 +21,6 @@ export class CreateEmployeeComponent {
   addEmployee() {
     this.router.navigate(['/mainView']);
     this.employeeService.addEmployee(this.employeeForm.value);
+    this.employeeService.getQuery();
   }
 }
