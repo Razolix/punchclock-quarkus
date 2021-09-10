@@ -13,7 +13,7 @@ import java.util.List;
 
 
 /**
- * Schnittstelle Ticket
+ * For Ticket entity
  */
 
 @Path("/tickets")

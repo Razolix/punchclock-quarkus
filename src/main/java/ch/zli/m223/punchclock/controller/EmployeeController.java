@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * Employee entity
+ * For Employee entity
  */
 @Path("/employees")
 @Tag(name = "Employees", description = "Handling of employees")

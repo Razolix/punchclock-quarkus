@@ -12,7 +12,7 @@ import javax.ws.rs.core.MediaType;
 import java.util.List;
 
 /**
- * Projekt Entity
+ * For Projekt Entity
  */
 @Path("/projects")
 @Tag(name = "Projects", description = "Handling of projects")
